@@ -1,0 +1,26 @@
+{
+  "name": "taller-practico-de-javascript-matematicas-y-estadistica-basica-2022",
+  "version": "1.0.0",
+  "description": "Curso de Platzi",
+  "main": "index.js",
+  "scripts": {
+    "watch-ts": "tsc --watch",
+    "init-ts": "tsc --init"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GaleedGutierrez/Taller-Practico-de-JavaScript-Matematicas-y-Estadistica-Basica-2022.git"
+  },
+  "author": "Galeed Gutierrez <galeedeveloper@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GaleedGutierrez/Taller-Practico-de-JavaScript-Matematicas-y-Estadistica-Basica-2022/issues"
+  },
+  "homepage": "https://github.com/GaleedGutierrez/Taller-Practico-de-JavaScript-Matematicas-y-Estadistica-Basica-2022#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
+    "eslint": "^8.25.0",
+    "typescript": "^4.8.4"
+  }
+}
