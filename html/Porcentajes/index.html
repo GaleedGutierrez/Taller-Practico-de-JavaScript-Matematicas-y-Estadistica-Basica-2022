@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://drive.google.com/uc?id=1bl11AhmUq6Ac64diUfeWUfTZpeqrUD9g" type="image/svg"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <link rel="stylesheet" href="../../css/tablet.css" media="screen and (min-width:1024px)"/>
+    <link rel="stylesheet" href="../../css/desktop.css" media="screen and (min-width:1280px)"/>
+    <title>Precios y descuentos</title>
+  </head>
+  <body>
+    <header class="header">
+      <section class="header__logo-container">
+        <figure class="header__logo-icon"><img src="https://drive.google.com/uc?id=1n_TDR3GiKGlotOtzsYUhFU-8oL-fjLj2" alt="Store icon"/></figure>
+        <h1 class="header__title">Tienda Online</h1>
+      </section>
+      <p class="header__subtitle">Módulo "Porcentajes" con JavaScript</p>
+    </header>
+    <main class="main">
+      <section class="main__subtotal-cupon-container">
+        <h2 class="main__subtotal-cupon-title">Calcula el precio final de tu compra</h2>
+        <div class="boxes-data-container">
+          <div class="boxes-data-input boxes-data-input--white">
+            <h3 class="boxes-data-input-title boxes-data-input-title--black">Subtotal</h3>
+            <form class="boxes-data-input__form" action="" onsubmit="return false">
+              <label class="boxes-data-input__label" for="subtotal-input">
+                <input class="boxes-data-input__input--orange boxes-data-input__input" type="number" name="subtotal-input" id="subtotal-input" placeholder="Precio"/>
+              </label>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="main__cupons-container">
+        <h3 class="main__cupons-title">Seleccione un cupón o ingrese un número de descuento</h3>
+        <div class="boxes-data-container">
+          <div class="boxes-data-input boxes-data-input--white">
+            <h3 class="boxes-data-input-title boxes-data-input-title--black">Cupon</h3>
+            <form class="boxes-data-input__form" action="" onsubmit="return false">
+              <label class="boxes-data-input__label" for="cupon-input">
+                <input class="boxes-data-input__input--orange boxes-data-input__input" type="text" name="cupon-input" id="cupon-input" placeholder="TO1"/>
+              </label>
+            </form>
+          </div>
+        </div>
+        <div class="cupons__buttons-container">
+          <div class="cupons__button-container">
+            <label class="buttons-call-to-action-gral__label cupons__buttons-label" for="cupon">
+              <input class="buttons-call-to-action-gral__input cupons__buttons-input" type="radio" name="cupon" value="TO10" id="cupon-1"/>
+              <p class="buttons-cupon">TO10</p>
+            </label>
+          </div>
+          <div class="cupons__button-container">
+            <label class="buttons-call-to-action-gral__label cupons__buttons-label" for="cupon">
+              <input class="buttons-call-to-action-gral__input cupons__buttons-input" type="radio" name="cupon" value="TO20" id="cupon-2"/>
+              <p class="buttons-cupon">TO20</p>
+            </label>
+          </div>
+          <div class="cupons__button-container">
+            <label class="buttons-call-to-action-gral__label cupons__buttons-label" for="cupon">
+              <input class="buttons-call-to-action-gral__input cupons__buttons-input" type="radio" name="cupon" value="TO30" id="cupon-3"/>
+              <p class="buttons-cupon">TO30</p>
+            </label>
+          </div>
+          <div class="cupons__button-container">
+            <label class="buttons-call-to-action-gral__label cupons__buttons-label" for="cupon">
+              <input class="buttons-call-to-action-gral__input cupons__buttons-input" type="radio" name="cupon" value="TO40" id="cupon-4"/>
+              <p class="buttons-cupon">TO40</p>
+            </label>
+          </div>
+          <div class="cupons__button-container">
+            <label class="buttons-call-to-action-gral__label cupons__buttons-label" for="cupon">
+              <input class="buttons-call-to-action-gral__input cupons__buttons-input" type="radio" name="cupon" value="TO50" id="cupon-5"/>
+              <p class="buttons-cupon">TO50</p>
+            </label>
+          </div>
+          <div class="cupons__button-container">
+            <label class="buttons-call-to-action-gral__label cupons__buttons-label" for="cupon">
+              <input class="buttons-call-to-action-gral__input cupons__buttons-input" type="radio" name="cupon" value="TO60" id="cupon-6"/>
+              <p class="buttons-cupon">TO60</p>
+            </label>
+          </div>
+          <div class="cupons__button-container">
+            <label class="buttons-call-to-action-gral__label cupons__buttons-label" for="cupon">
+              <input class="buttons-call-to-action-gral__input cupons__buttons-input" type="radio" name="cupon" value="TO70" id="cupon-7"/>
+              <p class="buttons-cupon">TO70</p>
+            </label>
+          </div>
+          <div class="cupons__button-container">
+            <label class="buttons-call-to-action-gral__label cupons__buttons-label" for="cupon">
+              <input class="buttons-call-to-action-gral__input cupons__buttons-input" type="radio" name="cupon" value="TO80" id="cupon-8"/>
+              <p class="buttons-cupon">TO80</p>
+            </label>
+          </div>
+        </div>
+      </section>
+      <section class="main__total-container">
+        <figure class="total-container__shopping-cart-icon"><img src="https://drive.google.com/uc?id=1bl11AhmUq6Ac64diUfeWUfTZpeqrUD9g" alt="Shopping cart icon"/></figure>
+        <div class="boxes-data-container">
+          <div class="boxes-results-final boxes-results-final--dark">
+            <h3 class="boxes-results-final-title boxes-results-final-title--white">Total</h3>
+            <p class="boxes-results-final__box-result boxes-results-final__box-result--white" id="total">Resultado</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__creator">Creado por Galeed Gutierrez</p>
+    </footer>
+    <script src="../../dist/porcentajes/index.js"></script>
+  </body>
+</html>

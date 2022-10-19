@@ -1,0 +1,33 @@
+.header {
+    position: relative;
+    width: 100%;
+    height: 7.7rem;
+    background: $bitcoin-orange;
+}
+
+.header__logo-container {
+    gap: 1.2rem;
+    color: $just-white;
+    width: 100%;
+    padding-block-start: 0.8rem;
+    @include all-center-flex;
+}
+
+.header__logo {
+    width: 4.644rem;
+    height: 4.5rem;
+}
+
+.header__subtitle {
+    position: absolute;
+    top: calc(100% - 1.7rem);
+    left: calc(50% - 17.25rem);
+    width: 34.5rem;
+    padding: 0.8rem;
+    font-weight: bold;
+    font-size: $small;
+    text-align: center;
+    border-radius: $border-radius-boxes;
+    background-color: $off-white;
+    box-shadow: $boxes-shadow;
+}

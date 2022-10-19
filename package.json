@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "watch-ts": "tsc --watch",
-    "init-ts": "tsc --init"
+    "init-ts": "tsc --init",
+    "run-pug": "pug --watch ./pug --out ./html -P"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,8 @@
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",
     "eslint": "^8.25.0",
+    "pug": "^3.0.2",
+    "pug-cli2": "^1.0.0-alpha6.1",
     "typescript": "^4.8.4"
   }
 }

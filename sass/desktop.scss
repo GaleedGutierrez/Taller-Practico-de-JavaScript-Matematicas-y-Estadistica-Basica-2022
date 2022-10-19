@@ -1,0 +1,10 @@
+@import "./components/global/header-desktop";
+
+html {
+    font-size: 85%;
+}
+
+.header__subtitle {
+    left: calc(50% - 270.35px);
+    width: fit-content;
+}

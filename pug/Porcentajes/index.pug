@@ -1,0 +1,29 @@
+extend ./components/global/_global.pug
+block head
+    +style-head("style.css")
+    +style-head-responsive("tablet.css", "1024")
+    +style-head-responsive("desktop.css", "1280")
+    +titles("Precios y descuentos")
+block main
+    main.main
+        section.main__subtotal-cupon-container
+            h2.main__subtotal-cupon-title Calcula el precio final de tu compra
+            .boxes-data-container
+                +boxes-data-input("boxes-data-input--white", "boxes-data-input__input--orange", "boxes-data-input-title--black","number", "Subtotal", "subtotal-input", "Precio")
+        section.main__cupons-container
+            h3.main__cupons-title Seleccione un cupón o ingrese un número de descuento
+            .boxes-data-container
+                +boxes-data-input("boxes-data-input--white", "boxes-data-input__input--orange", "boxes-data-input-title--black","text", "Cupon", "cupon-input", "TO1")
+            .cupons__buttons-container
+                +buttons-cupons("TO10", "cupon-1", "cupon", "TO10", "cuponTOSelected()")
+                +buttons-cupons("TO20", "cupon-2", "cupon", "TO20", "cuponTOSelected()")
+                +buttons-cupons("TO30", "cupon-3", "cupon", "TO30", "cuponTOSelected()")
+                +buttons-cupons("TO40", "cupon-4", "cupon", "TO40", "cuponTOSelected()")
+                +buttons-cupons("TO50", "cupon-5", "cupon", "TO50", "cuponTOSelected()")
+                +buttons-cupons("TO60", "cupon-6", "cupon", "TO60", "cuponTOSelected()")
+                +buttons-cupons("TO70", "cupon-7", "cupon", "TO70", "cuponTOSelected()")
+                +buttons-cupons("TO80", "cupon-8", "cupon", "TO80", "cuponTOSelected()")
+        section.main__total-container
+            +figure-img("1bl11AhmUq6Ac64diUfeWUfTZpeqrUD9g", "Shopping cart icon").total-container__shopping-cart-icon
+            .boxes-data-container
+                +boxes-results-final("Total", "total")

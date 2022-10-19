@@ -1,0 +1,10 @@
+@mixin all-center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin transition-boxes-geometric-figures {
+    transition-property: all;
+    transition-duration: $transition-duration-box-figures;
+}

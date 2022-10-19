@@ -1,0 +1,54 @@
+mixin titles(title)
+    title=title
+
+mixin favicon(favicon, typeFavicon)
+    link(rel="shortcut icon" href=favicon type="image/"+typeFavicon)
+
+mixin style-head(style)
+    link(rel="stylesheet", href="../../css/"+style)
+
+mixin style-head-responsive(stylesResponsive, screen)
+    link(rel="stylesheet", href="../../css/"+stylesResponsive media="screen and (min-width:" +screen+"px)")
+
+mixin style-animations(animation)
+    link(rel="stylesheet", href="../../css/"+animation media="screen and (prefers-reduced-motion: no-preference)")
+
+mixin figure-img(srcImg, altImg)
+    figure(class!=attributes.class)
+        img(src="https://drive.google.com/uc?id="+srcImg, alt=altImg)
+
+mixin theme-color-bar-navigator(color)
+    meta(name="theme-color" content=color)
+
+mixin favicon-navigator(favicon, typeImage)
+    link(rel="shortcut icon", href="https://drive.google.com/uc?id="+favicon, type="image/"+typeImage)
+
+//- mixin boxes-selections(figureType, figureName, forLabel, valueRadio, idInput)
+//-     label(for=forLabel).main__box-figures-label
+//-         input(type="radio", name=forLabel, id=idInput, value=valueRadio,onclick="addingDimensionBoxes()").main__box-figures-input
+//-         .main__box-figures-container
+//-             +geometric-figures(figureType)
+//-             p.box-figures__type=figureName
+
+mixin boxes-data-input(classContainer, classInput, classTitle,type, title, labelFor, placeholderInput)
+    .boxes-data-input(class=classContainer)
+        h3.boxes-data-input-title(class=classTitle)=title
+        form(action="" onsubmit="return false").boxes-data-input__form
+            label(for=labelFor).boxes-data-input__label
+                input(type=type, name=labelFor, id=labelFor, placeholder=placeholderInput class=classInput).boxes-data-input__input
+
+
+mixin buttons-call-to-action-gral(forLabel, valueInput, onclickInput)
+    label(for=forLabel).buttons-call-to-action-gral__label.cupons__buttons-label
+        input(type="ratio", value=valueInput, id=forLabel, onclick=onclickInput).buttons-call-to-action-gral__input.cupons__buttons-input
+
+mixin buttons-cupons(numberCupon, idInput, forLabelName, valueInput)
+    .cupons__button-container
+        label(for=forLabelName).buttons-call-to-action-gral__label.cupons__buttons-label
+            input(type="radio", name=forLabelName, value=valueInput, id=idInput).buttons-call-to-action-gral__input.cupons__buttons-input
+            p.buttons-cupon=numberCupon
+
+mixin boxes-results-final(title, idP)
+    .boxes-results-final.boxes-results-final--dark
+        h3.boxes-results-final-title.boxes-results-final-title--white=title
+        p.boxes-results-final__box-result.boxes-results-final__box-result--white(id=idP) Resultado
