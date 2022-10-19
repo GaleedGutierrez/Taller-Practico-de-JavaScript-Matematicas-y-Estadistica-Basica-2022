@@ -8,6 +8,25 @@ const calculateTriangle = (side1: number, side2: number, sideBase: number, heigh
 };
 
 
+const calculateHeightTriangle = (sides: number, sideBase: number) => {
+    if (sides === sideBase) {
+        console.warn('Este no es un triángulo isosceles');
+        return;
+    }
+
+    const HEIGHT = Math.sqrt(sides ** 2 - sideBase ** 2 / 4);
+    return HEIGHT;
+};
+
+
+const calculateHeightAnyoneTriangle = (side1: number, side2: number, sideBase: number) => {
+    const SEMI_PERIMETER = (side1 + side2 + sideBase) / 2;
+    const HEIGHT = 2 / sideBase * Math.sqrt(SEMI_PERIMETER * (SEMI_PERIMETER - side1) * (SEMI_PERIMETER - side2) * (SEMI_PERIMETER - sideBase));
+    return HEIGHT;
+};
+
+
+
 const calculateSquare = (side: number) => {
     const PERIMETER = side * 4;
     const AREA = side * side;
