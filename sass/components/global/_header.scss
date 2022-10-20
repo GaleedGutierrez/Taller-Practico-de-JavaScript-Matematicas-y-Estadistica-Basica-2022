@@ -21,9 +21,12 @@
 .header__subtitle {
     position: absolute;
     top: calc(100% - 1.7rem);
-    left: calc(50% - 17.25rem);
-    width: 34.5rem;
-    padding: 0.8rem;
+    left: calc(50% - 15.122rem);
+    // width: 34.5rem;
+    padding-block-start: 0.8rem;
+    padding-block-end: 0.8rem;
+    padding-inline-start: 1.5rem;
+    padding-inline-end: 1.5rem;
     font-weight: bold;
     font-size: $small;
     text-align: center;

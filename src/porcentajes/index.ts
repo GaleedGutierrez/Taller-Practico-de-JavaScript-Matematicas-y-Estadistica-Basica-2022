@@ -8,22 +8,18 @@ const addStylesTotal = (coupon: number, subtotal: number) => {
     PARAPH_TOTAL.classList.add('color-white');
 };
 
-
 const printDiscount = () => {
     const SUBTOTAL = parseFloat(INPUT_SUBTOTAL.value);
-    let coupon = 0;
+    const IS_TO_STRING = INPUT_COUPON.value.substring(0, 2) === 'TO';
+    const COUPON = IS_TO_STRING
+        ? parseInt(INPUT_COUPON.value.substring(2))
+        : parseFloat(INPUT_COUPON.value);
+    const TOTAL = SUBTOTAL * (100 - COUPON) / 100;
 
-    (INPUT_COUPON.value.substring(0, 2) === 'TO')
-        ? coupon = parseInt(INPUT_COUPON.value.substring(2))
-        : coupon = parseFloat(INPUT_COUPON.value);
-
-    const TOTAL = SUBTOTAL * (100 - coupon) / 100;
-
-    if (coupon && SUBTOTAL)
+    if (COUPON && SUBTOTAL)
         PARAPH_TOTAL.innerText = `$${TOTAL.toString()}`;
-    addStylesTotal(coupon, SUBTOTAL);
+    addStylesTotal(COUPON, SUBTOTAL);
 };
-
 
 const addStylesCoupons = (inputsCoupons: NodeListOf<HTMLInputElement>, couponSelected: HTMLInputElement) => {
     for (let i = 0; i < inputsCoupons.length; i++) {
@@ -42,9 +38,8 @@ const addStylesCoupons = (inputsCoupons: NodeListOf<HTMLInputElement>, couponSel
         : couponSelected.classList.remove('buttons-cupon--checked');
 };
 
-
 const printDiscountWithCoupon = (event: Event) => {
-    const COUPON_SELECTED = event.srcElement as HTMLInputElement;
+    const COUPON_SELECTED = event.target as HTMLInputElement;
     const INPUTS_COUPONS: NodeListOf<HTMLInputElement> = document.querySelectorAll('.cupons__buttons-input');
 
     addStylesCoupons(INPUTS_COUPONS, COUPON_SELECTED);
@@ -54,7 +49,6 @@ const printDiscountWithCoupon = (event: Event) => {
     printDiscount();
 };
 
-
 const INPUT_SUBTOTAL = document.querySelector('#subtotal-input') as HTMLInputElement;
 const INPUT_COUPON = document.querySelector('#cupon-input') as HTMLInputElement;
 const PARAPH_TOTAL = document.querySelector('#total') as HTMLParagraphElement;
@@ -63,13 +57,3 @@ const INPUTS_COUPONS: NodeListOf<HTMLInputElement> = document.querySelectorAll('
 INPUT_COUPON.addEventListener('keyup', printDiscount);
 INPUT_SUBTOTAL.addEventListener('keyup', printDiscount);
 INPUTS_COUPONS.forEach( (coupon) => coupon.addEventListener('change', printDiscountWithCoupon));
-
-// const xd = 1 * 2;
-// const algo = 'asdf';
-// printDiscount()
-
-
-// const asdf = {
-//     name   : 12,
-//     string : 123
-// };
