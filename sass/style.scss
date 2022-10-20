@@ -1,0 +1,84 @@
+@import "./components/global/global-styles";
+@import "./components/global/base-styles";
+@import "./components/global/header";
+@import "./components/global/footer";
+@import "./components/geometric-figures/geometric-figures";
+@import "./components/measurement-tables/measuremnet-tables";
+
+.main__subtotal-cupon-container {
+    padding: 3.6rem 3.2rem 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.main__subtotal-cupon-title {
+    margin-block-end: 2.4rem;
+}
+
+.main__cupons-container {
+    text-align: center;
+    padding: 0 3.2rem 4.8rem;
+}
+
+.main__cupons-title {
+    font-weight: bold;
+    margin-block-end: 2rem;
+}
+
+.cupons__buttons-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 6.5rem);
+    grid-auto-rows: 4.2rem;
+    justify-content: center;
+    gap: 1.2rem;
+    width: 100%;
+    margin-block-start: 2rem;
+}
+
+.cupons__button-container {
+    position: relative;
+}
+
+.cupons__buttons-input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 6.5rem;
+    height: 4.2rem;
+    opacity: 0;
+    z-index: 1;
+}
+
+.cupons__buttons-input:checked + .buttons-cupon {
+    background-color: $bitcoin-orange-dark;
+}
+
+
+.buttons-cupon {
+    text-align: center;
+    font-size: $medium;
+    color: $just-white;
+    width: 100%;
+    padding: 0.8rem 0;
+    border-radius: $border-radius-boxes;
+    background-color: $bitcoin-orange;
+}
+
+.buttons-cupon--checked {
+    background-color: $bitcoin-orange-dark;
+}
+
+.main__total-container {
+    position: relative;
+    padding: 3.6rem;
+    background-color: $warm-black;
+}
+
+.total-container__shopping-cart-icon {
+    position: absolute;
+    bottom: calc(100% - 2.25rem);
+    left: calc(50% - 2.25rem);
+    width: 4.5rem;
+}

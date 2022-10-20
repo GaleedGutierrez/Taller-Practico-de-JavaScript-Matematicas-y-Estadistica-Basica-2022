@@ -20,10 +20,20 @@
     "rules": {
         "semi": [2, "always"],
         "space-before-function-paren": ["error", "always"],
-        "quotes": ["error", "single", {"allowTemplateLiterals": true}],
-        "indent": ["error", 4],
-        "space-infix-ops": ["error", { "int32Hint": false }],
-        "comma-spacing": ["error", { "before": false, "after": true }],
+        "quotes": ["error", "single", {
+                "allowTemplateLiterals": true
+            }
+        ],
+        "indent": ["error", 4, { "SwitchCase": 1 }],
+        "space-infix-ops": ["error", {
+                    "int32Hint": false
+                }
+        ],
+        "comma-spacing": ["error", {
+                "before": false,
+                "after": true
+            }
+        ],
         "key-spacing": ["error", {
             "multiLine": {
                 "beforeColon": true,
@@ -39,6 +49,30 @@
                 "on": "colon"
             }
         }],
+        "no-multi-spaces": ["error", {
+                "ignoreEOLComments": false
+            }
+        ],
+        "padding-line-between-statements": ["error",
+            { "blankLine": "always", "prev": "*", "next": "return" },
+            { "blankLine": "always", "prev": ["case", "default"], "next": "*" },
+            { "blankLine": "always", "prev": "directive", "next": "*" },
+            { "blankLine": "any",    "prev": "directive", "next": "directive" },
+            { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*"},
+            { "blankLine": "any",    "prev": ["const", "let", "var"], "next": ["const", "let", "var"]}
+        ],
+        "arrow-spacing": ["error", { "before": true, "after": true }],
+        "lines-between-class-members": ["error", "never"],
+        "object-curly-spacing": ["error", "always"],
+        "computed-property-spacing": ["error", "never", { "enforceForClassMembers": true }],
+        "array-bracket-spacing": ["error", "always", {
+                "singleValue": false
+            }
+        ],
+        "keyword-spacing": ["error", { "before": true }],
+        "space-before-blocks": "error",
+        "multiline-ternary": ["error", "always"],
+        "no-unneeded-ternary": "error",
         "@typescript-eslint/no-non-null-assertion": "off"
     }
 }
