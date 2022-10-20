@@ -45,7 +45,7 @@ mixin buttons-call-to-action-gral(forLabel, valueInput, onclickInput)
 mixin buttons-cupons(numberCupon, idInput, forLabelName, valueInput)
     .cupons__button-container
         label(for=forLabelName).buttons-call-to-action-gral__label.cupons__buttons-label
-            input(type="radio", name=forLabelName, value=valueInput, id=idInput).buttons-call-to-action-gral__input.cupons__buttons-input
+            input(type="checkbox", name=forLabelName, value=valueInput, id=idInput).buttons-call-to-action-gral__input.cupons__buttons-input
             p.buttons-cupon=numberCupon
 
 mixin boxes-results-final(title, idP)
