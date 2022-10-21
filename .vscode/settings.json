@@ -1,4 +1,12 @@
 {
+    "peacock.color": "#42b883",
+    "cSpell.words": [
+        "cupon",
+        "CUPON",
+        "cupons",
+        "ecma"
+    ],
+    "cSpell.enabled": true,
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#65c89b",
         "activityBar.background": "#65c89b",
@@ -17,13 +25,5 @@
         "titleBar.activeForeground": "#15202b",
         "titleBar.inactiveBackground": "#42b88399",
         "titleBar.inactiveForeground": "#15202b99"
-    },
-    "peacock.color": "#42b883",
-    "cSpell.words": [
-        "cupon",
-        "CUPON",
-        "cupons",
-        "ecma"
-    ],
-    "cSpell.enabled": true
+    }
 }
