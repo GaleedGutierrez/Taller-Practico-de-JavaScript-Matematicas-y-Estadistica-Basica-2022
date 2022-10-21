@@ -1,4 +1,14 @@
 "use strict";
+const hiddenWrongMessage = (coupon) => {
+    const IS_WRONG_MESSAGE_HIDDEN = WRONG_MESSAGE.classList.contains('hidden');
+    if (coupon > 100 || !coupon) {
+        WRONG_MESSAGE.classList.remove('hidden');
+        PARAPH_TOTAL.classList.remove('color-white');
+        PARAPH_TOTAL.innerText = 'Resultado';
+    }
+    if (!IS_WRONG_MESSAGE_HIDDEN && coupon <= 100)
+        WRONG_MESSAGE.classList.add('hidden');
+};
 const addStylesTotal = (coupon, subtotal) => {
     if (!coupon || !subtotal) {
         PARAPH_TOTAL.classList.remove('color-white');
@@ -11,12 +21,14 @@ const printDiscount = () => {
     const SUBTOTAL = parseFloat(INPUT_SUBTOTAL.value);
     const IS_TO_STRING = INPUT_COUPON.value.substring(0, 2) === 'TO';
     const COUPON = IS_TO_STRING
-        ? parseInt(INPUT_COUPON.value.substring(2))
-        : parseFloat(INPUT_COUPON.value);
+        ? Number(INPUT_COUPON.value.substring(2))
+        : Number(INPUT_COUPON.value);
     const TOTAL = SUBTOTAL * (100 - COUPON) / 100;
-    if (COUPON && SUBTOTAL)
+    hiddenWrongMessage(COUPON);
+    if (COUPON && SUBTOTAL && COUPON < 100) {
+        addStylesTotal(COUPON, SUBTOTAL);
         PARAPH_TOTAL.innerText = `$${TOTAL.toString()}`;
-    addStylesTotal(COUPON, SUBTOTAL);
+    }
 };
 const addStylesCoupons = (inputsCoupons, couponSelected) => {
     for (let i = 0; i < inputsCoupons.length; i++) {
@@ -45,7 +57,8 @@ const INPUT_SUBTOTAL = document.querySelector('#subtotal-input');
 const INPUT_COUPON = document.querySelector('#cupon-input');
 const PARAPH_TOTAL = document.querySelector('#total');
 const INPUTS_COUPONS = document.querySelectorAll('.cupons__buttons-input');
-INPUT_COUPON.addEventListener('keyup', printDiscount);
+const WRONG_MESSAGE = document.querySelector('.cupons__wrong-message');
 INPUT_SUBTOTAL.addEventListener('keyup', printDiscount);
+INPUT_COUPON.addEventListener('keyup', printDiscount);
 INPUTS_COUPONS.forEach((coupon) => coupon.addEventListener('change', printDiscountWithCoupon));
 //# sourceMappingURL=index.js.map
