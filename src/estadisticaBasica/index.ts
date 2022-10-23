@@ -4,7 +4,9 @@ const getAverage = (list: number[]) => {
     for (const SALARY of list) {
         sumaSalaries += SALARY;
     }
-    const AVERAGE = sumaSalaries / LENGTH_SALARIES;
+    const AVERAGE = sumaSalaries / list.length;
 
     return AVERAGE;
 };
+
+const isEven = (list: number[]) => list.length % 2 === 0;

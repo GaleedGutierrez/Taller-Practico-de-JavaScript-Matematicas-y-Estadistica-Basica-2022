@@ -1,58 +1,57 @@
-const SALARIES = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ];
-const LENGTH_SALARIES = SALARIES.length;
+(() => {
+    const SALARIES = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ];
+    const LENGTH_SALARIES = SALARIES.length;
+    // 1st option
+    // const INITIAL_VALUE = 0;
+    // const SUM_SALARIES = SALARIES.reduce(
+    //     (accumulator, actual) => accumulator + actual,
+    //     INITIAL_VALUE
+    // );
+    // const AVERAGE = SUM_SALARIES / LENGTH_SALARIES;
 
-// 1st option
-// const INITIAL_VALUE = 0;
-// const SUM_SALARIES = SALARIES.reduce(
-//     (accumulator, actual) => accumulator + actual,
-//     INITIAL_VALUE
-// );
-// const AVERAGE = SUM_SALARIES / LENGTH_SALARIES;
+    // console.log(`First
+    // Average: ${AVERAGE}`);
 
-// console.log(`First
-// Average: ${AVERAGE}`);
+    // 2nd option
+    // let sumaSalaries = 0;
 
-// 2nd option
-// let sumaSalaries = 0;
+    // for (let i = 0; i < SALARIES.length; i++) {
+    //     sumaSalaries += SALARIES[i];
+    // }
+    // const AVERAGE = sumaSalaries / LENGTH_SALARIES;
 
-// for (let i = 0; i < SALARIES.length; i++) {
-//     sumaSalaries += SALARIES[i];
-// }
-// const AVERAGE = sumaSalaries / LENGTH_SALARIES;
+    // console.log(`Second
+    // ${AVERAGE}`);
 
-// console.log(`Second
-// ${AVERAGE}`);
+    // 3rd option
+    // let sumaSalaries = 0;
 
-// 3rd option
-// let sumaSalaries = 0;
+    // for (const SALARY of SALARIES) {
+    //     sumaSalaries += SALARY;
+    // }
+    // const AVERAGE = sumaSalaries / LENGTH_SALARIES;
 
-// for (const SALARY of SALARIES) {
-//     sumaSalaries += SALARY;
-// }
-// const AVERAGE = sumaSalaries / LENGTH_SALARIES;
+    // console.log(`Third
+    // ${AVERAGE}`);
 
-// console.log(`Third
-// ${AVERAGE}`);
+    // 4th option
+    // let sumaSalaries = 0;
 
-// 4th option
-// let sumaSalaries = 0;
+    // for (const i in SALARIES) {
+    //     sumaSalaries += SALARIES[i];
+    // }
+    // const AVERAGE = sumaSalaries / LENGTH_SALARIES;
 
-// for (const i in SALARIES) {
-//     sumaSalaries += SALARIES[i];
-// }
-// const AVERAGE = sumaSalaries / LENGTH_SALARIES;
+    // console.log(`FOURTH
+    // ${AVERAGE}`);
 
-// console.log(`FOURTH
-// ${AVERAGE}`);
+    // 5th option
+    // let sumaSalaries = 0;
 
-// 5th option
-// let sumaSalaries = 0;
+    // SALARIES.forEach((salarie) => sumaSalaries += salarie);
 
-// SALARIES.forEach((salarie) => sumaSalaries += salarie);
+    // const AVERAGE = sumaSalaries / LENGTH_SALARIES;
 
-// const AVERAGE = sumaSalaries / LENGTH_SALARIES;
-
-// console.log(`FIFTH
-// ${AVERAGE}`);
-
-
+    // console.log(`FIFTH
+    // ${AVERAGE}`);
+})();
