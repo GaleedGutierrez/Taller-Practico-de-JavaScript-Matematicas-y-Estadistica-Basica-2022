@@ -73,6 +73,7 @@
         "space-before-blocks": "error",
         "multiline-ternary": ["error", "always"],
         "no-unneeded-ternary": "error",
+        "new-cap": "error",
         "@typescript-eslint/no-non-null-assertion": "off"
     }
 }
