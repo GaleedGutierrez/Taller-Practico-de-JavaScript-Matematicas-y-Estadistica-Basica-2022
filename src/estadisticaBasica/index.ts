@@ -20,19 +20,20 @@ const calculareMedian = (list: number[]) => {
     let median = 0;
 
     if (IS_ODD) {
-        const HALF = Math.floor(list.length / 2);
+        const HALF_ODD = Math.floor(list.length / 2);
 
-        median = list[HALF];
+        median = list[HALF_ODD];
     }
 
     if (IS_EVEN) {
-        const FIRST_POSITION = Math.floor(list.length / 2);
-        const SECOND_POSITION = FIRST_POSITION - 1;
+        const FIRST_HALF = Math.floor(list.length / 2);
+        const SECOND_HALF = FIRST_HALF - 1;
+        const LIST_HALVES = [ list[FIRST_HALF], list[SECOND_HALF] ];
 
-        median = getAverage([ list[FIRST_POSITION], list[SECOND_POSITION] ]);
+        median = getAverage(LIST_HALVES);
     }
 
     return median;
 };
 
-console.log(calculareMedian([ 0, 9, 2 ]));
+console.log(calculareMedian([ 10, 20, 30, 40 ]));
