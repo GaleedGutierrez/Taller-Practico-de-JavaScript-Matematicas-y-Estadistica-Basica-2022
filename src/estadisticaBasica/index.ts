@@ -47,6 +47,15 @@ const sortList = (unorderedList: number[]): number[] => {
     return SORTED_LIST;
 };
 
+const sortListBidimensional = (unorderedList: [string, number][], i: number): [string, number][] => {
+    let sortedList: [string, number][] = [];
+
+    if (i === 1)
+        sortedList = unorderedList.sort((a, b) => b[i] - a[i]);
+
+    return sortedList;
+};
+
 const calculateMode = (list: unknown[]) => {
     const COUNTER_LIST: InterfaceCounterListMode = {};
 
@@ -56,7 +65,12 @@ const calculateMode = (list: unknown[]) => {
             : COUNTER_LIST[ITEM as keyof typeof COUNTER_LIST] = 1;
     }
 
-    console.log(COUNTER_LIST);
+    const LIST_ARRAY = Object.entries(COUNTER_LIST);
+    const LAST_SORTED_LIST = LIST_ARRAY[0].length - 1;
+    const SORTED_LIST = sortListBidimensional(LIST_ARRAY, LAST_SORTED_LIST);
+    const MODE = SORTED_LIST[0][0];
+
+    return MODE;
 };
 
-calculateMode([ 10, 20, 5, 30, 40, 1, 0, 3, 2, 3, 1, 1 ]);
+console.log(calculateMode([ 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 1 ]));
