@@ -6,6 +6,7 @@
         "CUPON",
         "cupons",
         "ecma",
+        "linebreak",
         "parens"
     ],
     "cSpell.enabled": true,

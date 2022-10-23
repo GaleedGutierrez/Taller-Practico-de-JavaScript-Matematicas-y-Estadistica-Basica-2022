@@ -1,3 +1,7 @@
+interface InterfaceCounterListMode {
+    [key: string]: number
+}
+
 const getAverage = (list: number[]): number => {
     let sumNumbers = 0;
 
@@ -43,4 +47,16 @@ const sortList = (unorderedList: number[]): number[] => {
     return SORTED_LIST;
 };
 
-console.log(calculareMedian([ 10, 20, 5, 30, 40, 1, 0, 3 ]));
+const calculateMode = (list: unknown[]) => {
+    const COUNTER_LIST: InterfaceCounterListMode = {};
+
+    for (const ITEM of list) {
+        (ITEM as keyof typeof COUNTER_LIST in COUNTER_LIST)
+            ? COUNTER_LIST[ITEM as keyof typeof COUNTER_LIST] += 1
+            : COUNTER_LIST[ITEM as keyof typeof COUNTER_LIST] = 1;
+    }
+
+    console.log(COUNTER_LIST);
+};
+
+calculateMode([ 10, 20, 5, 30, 40, 1, 0, 3, 2, 3, 1, 1 ]);
