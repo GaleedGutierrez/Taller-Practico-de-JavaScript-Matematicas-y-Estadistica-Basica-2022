@@ -4,7 +4,8 @@ const getAverage = (list) => {
     for (const SALARY of list) {
         sumaSalaries += SALARY;
     }
-    const AVERAGE = sumaSalaries / LENGTH_SALARIES;
+    const AVERAGE = sumaSalaries / list.length;
     return AVERAGE;
 };
+const isEven = (list) => list.length % 2 === 0;
 //# sourceMappingURL=index.js.map
