@@ -69,7 +69,7 @@
             { "blankLine": "always",    "prev": "expression", "next": "*"}
         ],
         "arrow-spacing": ["error", { "before": true, "after": true }],
-        "lines-between-class-members": ["error", "never"],
+        "lines-between-class-members": ["error", "always"],
         "object-curly-spacing": ["error", "always"],
         "computed-property-spacing": ["error", "never", { "enforceForClassMembers": true }],
         "array-bracket-spacing": ["error", "always", {
