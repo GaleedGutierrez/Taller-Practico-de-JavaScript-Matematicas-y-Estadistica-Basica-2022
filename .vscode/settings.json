@@ -1,10 +1,12 @@
 {
     "peacock.color": "#42b883",
     "cSpell.words": [
+        "camelcase",
         "cupon",
         "CUPON",
         "cupons",
-        "ecma"
+        "ecma",
+        "parens"
     ],
     "cSpell.enabled": true,
     "workbench.colorCustomizations": {

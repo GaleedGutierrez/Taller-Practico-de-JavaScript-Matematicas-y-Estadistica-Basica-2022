@@ -81,6 +81,9 @@
         "no-unneeded-ternary": "error",
         "new-cap": "error",
         "no-lone-blocks": "error",
+        "camelcase": "error",
+        "space-in-parens": ["error", "never"],
+        "func-call-spacing": ["error", "never"],
         "@typescript-eslint/no-non-null-assertion": "off"
     }
 }
