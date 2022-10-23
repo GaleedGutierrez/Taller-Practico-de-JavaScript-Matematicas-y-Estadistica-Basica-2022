@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../src/estadisticaBasica/index.ts"],"names":[],"mappings":";AAAA,MAAM,UAAU,GAAG,CAAC,IAAc,EAAE,EAAE;IAClC,IAAI,YAAY,GAAG,CAAC,CAAC;IAErB,KAAK,MAAM,MAAM,IAAI,IAAI,EAAE;QACvB,YAAY,IAAI,MAAM,CAAC;KAC1B;IACD,MAAM,OAAO,GAAG,YAAY,GAAG,eAAe,CAAC;IAE/C,OAAO,OAAO,CAAC;AACnB,CAAC,CAAC"}
