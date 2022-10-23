@@ -59,7 +59,13 @@
             { "blankLine": "always", "prev": "directive", "next": "*" },
             { "blankLine": "any",    "prev": "directive", "next": "directive" },
             { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*"},
-            { "blankLine": "any",    "prev": ["const", "let", "var"], "next": ["const", "let", "var"]}
+            { "blankLine": "any",    "prev": ["const", "let", "var"], "next": ["const", "let", "var"]},
+            { "blankLine": "always", "prev": ["const", "let", "var"], "next": "block-like"},
+            // { "blankLine": "any",    "prev": ["const", "let", "var"], "next": "expression"},
+            // { "blankLine": "always", "prev": "block-like", "next": ["const", "let", "var"]},
+            // { "blankLine": "always", "prev": "block-like", "next": "block-like"},
+            { "blankLine": "always", "prev": "block-like", "next": "*"},
+            { "blankLine": "always",    "prev": "expression", "next": "*"}
         ],
         "arrow-spacing": ["error", { "before": true, "after": true }],
         "lines-between-class-members": ["error", "never"],
@@ -74,6 +80,7 @@
         "multiline-ternary": ["error", "always"],
         "no-unneeded-ternary": "error",
         "new-cap": "error",
+        "no-lone-blocks": "error",
         "@typescript-eslint/no-non-null-assertion": "off"
     }
 }
