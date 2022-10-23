@@ -1,4 +1,3 @@
-"use strict";
 const getAverage = (list) => {
     let sumNumbers = 0;
     for (const NUMBER of list) {
@@ -50,4 +49,5 @@ const calculateMode = (list) => {
     return MODE;
 };
 console.log(calculateMode([3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 1]));
+export {};
 //# sourceMappingURL=index.js.map

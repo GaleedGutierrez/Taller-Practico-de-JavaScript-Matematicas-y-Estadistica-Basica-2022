@@ -1,6 +1,4 @@
-interface InterfaceCounterListMode {
-    [key: string]: number
-}
+import { InterfaceCounterListMode } from './interfaces';
 
 const getAverage = (list: number[]): number => {
     let sumNumbers = 0;
