@@ -68,6 +68,7 @@
             { "blankLine": "always", "prev": "block-like", "next": "*"},
             { "blankLine": "always", "prev": "expression", "next": "*"},
             { "blankLine": "always", "prev": "import", "next": "*"},
+            { "blankLine": "any", "prev": "import", "next": "import"},
             { "blankLine": "always", "prev": "export", "next": "*"}
         ],
         "arrow-spacing": ["error", { "before": true, "after": true }],
