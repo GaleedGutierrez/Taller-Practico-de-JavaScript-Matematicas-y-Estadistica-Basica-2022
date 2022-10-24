@@ -40,5 +40,17 @@ const businessAnalytics = (data) => {
     }
     return BUSINESS;
 };
+const medianSalaryBusiness = (business, year) => {
+    const IS_BUSINESS = Boolean(BUSINESS[business]);
+    if (!IS_BUSINESS)
+        return 'Check company name.';
+    const IS_YEAR = Boolean(BUSINESS[business][year]);
+    if (!IS_YEAR)
+        return 'Check year.';
+    const MEDIAN = PlatziMath.calculateMedian(BUSINESS[business][year]);
+    return MEDIAN;
+};
 const BUSINESS = businessAnalytics(SALARIES);
+// console.log(BUSINESS);
+console.log(medianSalaryBusiness('Dail Planet', 20108));
 //# sourceMappingURL=index.js.map
