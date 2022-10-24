@@ -1,5 +1,9 @@
 import { PlatziMath } from '../estadisticaBasica/platziMath.js';
-import { InterfaceBusiness, InterfaceSalaries } from './interfaces.js';
+import {
+    InterfaceBusiness,
+    InterfaceMedianSalariesBusiness,
+    InterfaceSalaries
+} from './interfaces.js';
 import { SALARIES } from './salaries.js';
 
 // Análisis personal de Juanita [id: 1].
@@ -16,55 +20,73 @@ const medianWorks = (id: number) => {
 const salaryProjection = (id: number) => {
     const WORKS = findPerson(id)?.works ?? [];
     const SALARIES = WORKS.map(work => work.salary);
+    const FUTURE_SALARY = getFutureSalary(SALARIES);
+
+    return FUTURE_SALARY;
+};
+
+// Análisis empresarial
+const businessAnalytics = (data: InterfaceSalaries[]) => {
+    const COMPANIES: InterfaceBusiness = {};
+    const PEOPLE_WORKS = data.map(person => person.works);
+
+    for (const PERSON_WORK of PEOPLE_WORKS) {
+        for (const WORK of PERSON_WORK) {
+            if (!COMPANIES[WORK.company]) COMPANIES[WORK.company] = {};
+
+            (COMPANIES[WORK.company][WORK.year])
+                ? COMPANIES[WORK.company][WORK.year].push(WORK.salary)
+                : COMPANIES[WORK.company][WORK.year] = [WORK.salary];
+        }
+    }
+
+    return COMPANIES;
+};
+
+const medianSalaryCompanies = (business: string, year: number) => {
+    const IS_COMPANY = Boolean(COMPANIES[business]);
+
+    if (!IS_COMPANY) return 'Check company name.';
+    const IS_YEAR = Boolean(COMPANIES[business][year]);
+
+    if (!IS_YEAR) return 'Check year.';
+    const MEDIAN = PlatziMath.calculateMedian(COMPANIES[business][year]);
+
+    return MEDIAN;
+};
+
+const salaryProjectionCompanies = (name: string) => {
+    if (!COMPANIES[name]) return 'Check company name.';
+    const SALARIES_YEAR_COMPANY = COMPANIES[name];
+    const SALARIES_MEDIAN: InterfaceMedianSalariesBusiness = {};
+
+    for (const YEAR in SALARIES_YEAR_COMPANY) {
+        SALARIES_MEDIAN[YEAR] = PlatziMath.calculateMedian(SALARIES_YEAR_COMPANY[YEAR]);
+    }
+
+    const SALARIES_MEDIAN_VALUES = Object.values(SALARIES_MEDIAN);
+    const FUTURE_SALARY = getFutureSalary(SALARIES_MEDIAN_VALUES);
+
+    return FUTURE_SALARY;
+};
+
+const getFutureSalary = (salaries: number[]) => {
     const GROWTH_PERCENTAGES = [];
 
-    for (let i = 0; i < SALARIES.length; i++) {
-        if (!SALARIES[i + 1]) break;
-        const PREVIOUS_SALARY = SALARIES[i];
-        const NEXT_SALARY = SALARIES[i + 1];
+    for (let i = 0; i < salaries.length; i++) {
+        if (!salaries[i + 1]) break;
+        const PREVIOUS_SALARY = salaries[i];
+        const NEXT_SALARY = salaries[i + 1];
         const GROWTH = NEXT_SALARY / PREVIOUS_SALARY;
 
         GROWTH_PERCENTAGES.push(GROWTH);
     }
 
     const MEDIAN = PlatziMath.calculateMedian(GROWTH_PERCENTAGES);
-    const LAST_SALARY = SALARIES.length - 1;
-    const FUTURE_SALARY = SALARIES[LAST_SALARY] * MEDIAN;
+    const LAST_SALARY = salaries.length - 1;
+    const FUTURE_SALARY = salaries[LAST_SALARY] * MEDIAN;
 
     return Math.round(FUTURE_SALARY);
 };
 
-// Análisis empresarial
-const businessAnalytics = (data: InterfaceSalaries[]) => {
-    const BUSINESS: InterfaceBusiness = {};
-    const PEOPLE_WORKS = data.map(person => person.works);
-
-    for (const PERSON_WORK of PEOPLE_WORKS) {
-        for (const WORK of PERSON_WORK) {
-            if (!BUSINESS[WORK.company]) BUSINESS[WORK.company] = {};
-
-            (BUSINESS[WORK.company][WORK.year])
-                ? BUSINESS[WORK.company][WORK.year].push(WORK.salary)
-                : BUSINESS[WORK.company][WORK.year] = [WORK.salary];
-        }
-    }
-
-    return BUSINESS;
-};
-
-const medianSalaryBusiness = (business: string, year: number) => {
-    const IS_BUSINESS = Boolean(BUSINESS[business]);
-
-    if (!IS_BUSINESS) return 'Check company name.';
-    const IS_YEAR = Boolean(BUSINESS[business][year]);
-
-    if (!IS_YEAR) return 'Check year.';
-    const MEDIAN = PlatziMath.calculateMedian(BUSINESS[business][year]);
-
-    return MEDIAN;
-};
-
-const BUSINESS = businessAnalytics(SALARIES);
-
-// console.log(BUSINESS);
-console.log(medianSalaryBusiness('Dail Planet', 20108));
+const COMPANIES = businessAnalytics(SALARIES);

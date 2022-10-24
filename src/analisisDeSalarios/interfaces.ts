@@ -17,3 +17,7 @@ export interface InterfaceBusiness {
 export interface InterfaceYearsSalaries {
     [key: string]: number[]
 }
+
+export interface InterfaceMedianSalariesBusiness {
+    [key: string]: number;
+}

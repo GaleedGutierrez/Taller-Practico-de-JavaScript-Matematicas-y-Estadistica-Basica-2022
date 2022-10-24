@@ -6,6 +6,7 @@
   "scripts": {
     "watch-ts": "tsc --watch",
     "init-ts": "tsc --init",
+    "run-ts-node": "ts-node-esm",
     "run-pug": "pug --watch ./pug --out ./html -P"
   },
   "repository": {
