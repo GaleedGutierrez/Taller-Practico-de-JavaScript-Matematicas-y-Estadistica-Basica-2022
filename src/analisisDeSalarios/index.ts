@@ -89,4 +89,25 @@ const getFutureSalary = (salaries: number[]) => {
     return Math.round(FUTURE_SALARY);
 };
 
+// Análisis general
+const generalMedina = () => {
+    const MEDIAN_PER_PEOPLE = SALARIES.map(person => medianWorks(person.id));
+    const GENERAL_MEDIAN = PlatziMath.calculateMedian(MEDIAN_PER_PEOPLE);
+
+    return GENERAL_MEDIAN;
+};
+
+const medianTopTen = () => {
+    const MEDIAN_PER_PEOPLE = SALARIES.map(person => medianWorks(person.id));
+    const TOP_TEN_LENGTH =
+        (!(MEDIAN_PER_PEOPLE.length * 0.1 < 1))
+            ? MEDIAN_PER_PEOPLE.length * 0.1
+            : 1;
+    const SORTED_MEDIANS = MEDIAN_PER_PEOPLE.sort((a, b) => b - a);
+    const LIST_TOP_TEN = SORTED_MEDIANS.splice(0, TOP_TEN_LENGTH);
+    const MEDIAN_TOP_TEN = PlatziMath.calculateMedian(LIST_TOP_TEN);
+
+    return MEDIAN_TOP_TEN;
+};
+
 const COMPANIES = businessAnalytics(SALARIES);
