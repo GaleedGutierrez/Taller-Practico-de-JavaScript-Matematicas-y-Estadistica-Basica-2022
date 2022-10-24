@@ -5,9 +5,19 @@
         "cupon",
         "CUPON",
         "cupons",
+        "Daniela",
+        "Dilan",
         "ecma",
+        "Inversionify",
+        "Jonatan",
         "linebreak",
-        "parens"
+        "Luthor",
+        "Marketeros",
+        "Mokepon",
+        "Nath",
+        "parens",
+        "Teodoro",
+        "Zamir"
     ],
     "cSpell.enabled": true,
     "workbench.colorCustomizations": {
@@ -28,5 +38,5 @@
         "titleBar.activeForeground": "#15202b",
         "titleBar.inactiveBackground": "#42b88399",
         "titleBar.inactiveForeground": "#15202b99"
-    }
+    },
 }

@@ -66,7 +66,9 @@
             // { "blankLine": "always", "prev": "block-like", "next": ["const", "let", "var"]},
             // { "blankLine": "always", "prev": "block-like", "next": "block-like"},
             { "blankLine": "always", "prev": "block-like", "next": "*"},
-            { "blankLine": "always",    "prev": "expression", "next": "*"}
+            { "blankLine": "always", "prev": "expression", "next": "*"},
+            { "blankLine": "always", "prev": "import", "next": "*"},
+            { "blankLine": "always", "prev": "export", "next": "*"}
         ],
         "arrow-spacing": ["error", { "before": true, "after": true }],
         "lines-between-class-members": ["error", "always"],
