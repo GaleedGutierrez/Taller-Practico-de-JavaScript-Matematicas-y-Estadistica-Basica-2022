@@ -25,5 +25,20 @@ const salaryProjection = (id) => {
     const FUTURE_SALARY = SALARIES[LAST_SALARY] * MEDIAN;
     return Math.round(FUTURE_SALARY);
 };
-console.log(salaryProjection(1));
+// Análisis empresarial
+const businessAnalytics = (data) => {
+    const BUSINESS = {};
+    const PEOPLE_WORKS = data.map(person => person.works);
+    for (const PERSON_WORK of PEOPLE_WORKS) {
+        for (const WORK of PERSON_WORK) {
+            if (!BUSINESS[WORK.company])
+                BUSINESS[WORK.company] = {};
+            (BUSINESS[WORK.company][WORK.year])
+                ? BUSINESS[WORK.company][WORK.year].push(WORK.salary)
+                : BUSINESS[WORK.company][WORK.year] = [WORK.salary];
+        }
+    }
+    return BUSINESS;
+};
+const BUSINESS = businessAnalytics(SALARIES);
 //# sourceMappingURL=index.js.map

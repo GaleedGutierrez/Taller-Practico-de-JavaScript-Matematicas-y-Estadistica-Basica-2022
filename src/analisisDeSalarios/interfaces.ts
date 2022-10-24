@@ -9,3 +9,11 @@ export interface InterfaceJob {
     company: string;
     salary: number;
 }
+
+export interface InterfaceBusiness {
+    [key: string]: InterfaceYearsSalaries;
+}
+
+export interface InterfaceYearsSalaries {
+    [key: string]: number[]
+}
