@@ -9,7 +9,7 @@ export class PlatziMath {
     }
     static isOdd = (list) => Boolean(list.length % 2);
     static isEven = (list) => !(list.length % 2);
-    static calculareMedian(unorderedList) {
+    static calculateMedian(unorderedList) {
         const SORTED_LIST = this.sortList(unorderedList);
         const IS_ODD = this.isOdd(SORTED_LIST);
         const IS_EVEN = this.isEven(SORTED_LIST);
